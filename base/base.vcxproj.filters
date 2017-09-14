@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="adat.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="amem.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="aref.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="collection.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="crt.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="xsbase.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="xsfield.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="xsref.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="amem.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="collection.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="crt.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="crt_memory.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="crt_parse.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="xsbase.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="xsfield.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="xsref.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="properties.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="xsobject.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Support">
+      <UniqueIdentifier>{a1d114d8-8a58-42d1-9b2e-59545c1d46fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{34f22e02-c679-429c-b694-85c60c352c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bases">
+      <UniqueIdentifier>{eec3ac58-ad07-489c-8eb3-8c797fd4c96e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
