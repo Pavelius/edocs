@@ -61,7 +61,16 @@
       <Filter>Bases</Filter>
     </ClCompile>
     <ClCompile Include="xsobject.cpp">
-      <Filter>Support</Filter>
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="document.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="stock.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>Bases</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
