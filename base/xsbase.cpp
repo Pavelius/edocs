@@ -2,6 +2,7 @@
 #include "xsbase.h"
 
 xsbase* xsbase::first;
+xsfield char_type[2] = {{"char"}, {0}};
 
 xsbase::xsbase(const char* id, void* data, unsigned size, unsigned lenght, const xsfield* fields, const void* clone) :
 	amem(size), id(id), fields(fields), clone(clone)
@@ -59,7 +60,7 @@ xsref xsbase::getrefbyptr(const void* value)
 	for(auto xs = first; xs; xs = xs->next)
 	{
 		auto index = xs->indexof(value);
-		if(index==-1)
+		if(index == -1)
 			continue;
 		return{xs->fields, (void*)xs->get(index)};
 	}
@@ -85,7 +86,16 @@ void* xsbase::add(const void* object)
 {
 	if(count >= count_maximum)
 		return 0;
-	auto p = (void*)get(count++);
+	// —оздадим среди существующего контента
+	auto p = (char*)data;
+	auto pe = (char*)data + count*size;
+	for(; p < pe; p += size)
+	{
+		if(memcmp(p, clone, size) == 0)
+			break;
+	}
+	// —генерим новый
+	p = (char*)get(count++);
 	if(object)
 		memcpy(p, object, size);
 	return p;
@@ -109,7 +119,7 @@ xsbase* xsbase::find(const xsfield* type)
 		return 0;
 	for(auto p = first; p; p = p->next)
 	{
-		if(p->fields==type)
+		if(p->fields == type)
 			return p;
 	}
 	return 0;
@@ -121,7 +131,7 @@ xsbase* xsbase::findbyptr(const void* object)
 		return 0;
 	for(auto p = first; p; p = p->next)
 	{
-		if(object>=p->data && object<=(char*)p->data + p->count_maximum*p->size)
+		if(object >= p->data && object <= (char*)p->data + p->count_maximum*p->size)
 			return p;
 	}
 	return 0;

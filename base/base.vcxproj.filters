@@ -60,9 +60,6 @@
     <ClCompile Include="properties.cpp">
       <Filter>Bases</Filter>
     </ClCompile>
-    <ClCompile Include="xsobject.cpp">
-      <Filter>Module</Filter>
-    </ClCompile>
     <ClCompile Include="document.cpp">
       <Filter>Bases</Filter>
     </ClCompile>
@@ -70,6 +67,18 @@
       <Filter>Bases</Filter>
     </ClCompile>
     <ClCompile Include="client.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="getstrdat.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="rawobject.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="reference.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="offer.cpp">
       <Filter>Bases</Filter>
     </ClCompile>
   </ItemGroup>

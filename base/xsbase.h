@@ -8,6 +8,7 @@ struct xsbase : amem
 	const char*			id;
 	const xsfield*		fields;
 	const void*			clone;
+	unsigned			uid;
 	xsbase*				next;
 	static xsbase*		first;
 	//
@@ -28,15 +29,6 @@ struct xsbase : amem
 	static bool			write(const char* url);
 	static bool			write(const char* url, const char** names);
 };
-struct xsenum
-{
-	const char*			id;
-	const char*			name;
-	const char*			text;
-};
 #define BSMETA(c) \
 static c c##_clone;\
 xsbase c##_manager(#c, c##_data, sizeof(c##_data[0]), sizeof(c##_data), c##_type, &c##_clone);
-
-#define BSTYPE(c) \
-xsbase c##_manager(#c, 0, 0, 0, c##_type, 0);

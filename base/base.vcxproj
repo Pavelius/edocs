@@ -134,13 +134,16 @@
     <ClCompile Include="crt_memory.cpp" />
     <ClCompile Include="crt_parse.cpp" />
     <ClCompile Include="document.cpp" />
+    <ClCompile Include="getstrdat.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="offer.cpp" />
     <ClCompile Include="properties.cpp" />
     <ClCompile Include="stock.cpp" />
     <ClCompile Include="xsbase.cpp" />
     <ClCompile Include="xsfield.cpp" />
-    <ClCompile Include="xsobject.cpp" />
+    <ClCompile Include="rawobject.cpp" />
     <ClCompile Include="xsref.cpp" />
+    <ClCompile Include="reference.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

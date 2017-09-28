@@ -4,7 +4,6 @@ extern "C" int strcmp(const char* s1, const char* s2);
 
 xsfield number_type[2] = {{"number"}, {0}};
 xsfield text_type[2] = {{"text"}, {0}};
-xsfield reference_type[2] = {{"reference"}, {0}};
 xsfield xsfield_type[] = {
 	BSREQ(xsfield, id, text_type),
 	BSREQ(xsfield, offset, number_type),

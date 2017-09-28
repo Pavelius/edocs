@@ -1,18 +1,7 @@
 #include "main.h"
 
-xsfield properties_type[];
-struct properties : xsobject
-{
-	xsobject*		object;
-	xsobject*		requisit;
-	int				value;
-	
-	const xsfield* getmeta() const
-	{
-		return properties_type;
-	}
+using namespace evrika;
 
-};
 xsfield properties_type[] = {
 	BSREQ(properties, object, reference_type),
 	BSREQ(properties, requisit, reference_type),

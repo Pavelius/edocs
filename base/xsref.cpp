@@ -85,26 +85,3 @@ const void* xsref::ptr(const char* name, unsigned index) const
 		return 0;
 	return pf->ptr(object, index);
 }
-
-void xsref::clear() const
-{
-	if(!fields)
-		return;
-	for(auto f = fields; f->id; f++)
-		memset((void*)f->ptr(object), 0, f->lenght);
-}
-
-bool xsref::isempthy() const
-{
-	for(auto f = fields; f->id; f++)
-	{
-		auto p1 = f->ptr(object);
-		auto p2 = p1 + f->lenght;
-		while(p1 < p2)
-		{
-			if(*p1)
-				return false;
-		}
-	}
-	return true;
-}

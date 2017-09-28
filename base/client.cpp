@@ -1,17 +1,10 @@
 #include "main.h"
 
-struct client : reference
-{
-	const char*	comment;
+using namespace evrika;
 
-	const xsfield* getmeta() const
-	{
-		return client_type;
-	}
-
-};
 xsfield client_type[] = {
 	BSREF(client),
-	BSREQ(client, comment, text_type),
+	BSREQ(client, idcode, char_type),
+	BSREQ(client, full_name, char_type),
 	{0}
 };

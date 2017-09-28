@@ -2,7 +2,7 @@
 
 using namespace evrika;
 
-xsfield stock_type[] = {
-	BSREF(stock),
+xsfield offer_type[] = {
+	BSREF(offer),
 	{0}
 };
