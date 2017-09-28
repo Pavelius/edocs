@@ -24,3 +24,14 @@ xsfield document_type[] = {
 };
 static document document_data[128*128];
 BSMETA(document)
+
+COMMAND(app_initialize)
+{
+	auto root = create_folder(0, "Документы", document_type);
+	create_folder(root, "Расходные накладные");
+	create_folder(root, "Приходные накладные");
+	create_folder(root, "Списание товаров");
+	create_folder(root, "Оприходование товаров");
+	create_folder(root, "Инвентаризация товаров");
+	create_folder(root, "Установка цен");
+}

@@ -21,19 +21,32 @@ BSREQ(c, comment, text_type)
 extern xsfield						client_type[];
 extern xsfield						char_type[];
 extern xsfield						document_type[];
+extern xsfield						offer_type[];
 extern xsfield						profile_type[];
 extern xsfield						properties_type[];
 extern xsfield						reference_type[];
+extern xsfield						requisit_type[];
 extern xsfield						stock_type[];
+extern xsfield						user_type[];
+
+enum evrika_flag_s {EvrikaPredifined, EvrikaActualized, EvrikaDeleted,
+};
 
 namespace evrika
 {
+	struct folder;
 	struct reference;
 	struct user;
 	namespace current
 	{
 		extern struct user*			user;
 		extern struct user*			superuser;
+		extern struct stock*		stock;
+		namespace folders
+		{
+			extern folder*			administrators;
+			extern folder*			users;
+		}
 	}
 	struct rawobject
 	{
@@ -44,18 +57,19 @@ namespace evrika
 		user*						changer;
 		unsigned					flags;
 		//
-		virtual bool				actualing() { return true; }
-		virtual void				changing();
-		virtual void				creating();
 		bool						isactualized() const;
 		bool						isdeleted() const;
-		virtual int					get(const char* id) const;
-		virtual const xsfield*		getmeta() const = 0;
+		bool						ispredefined() const;
 	};
 	struct reference : rawobject
 	{
+		const char*					id;
 		const char*					name;
 		const char*					comment;
+	};
+	struct folder : reference
+	{
+		xsfield*					metadata;
 	};
 	struct profile_rights
 	{
@@ -72,7 +86,6 @@ namespace evrika
 	};
 	struct requisit : rawobject
 	{
-		const char*					id;
 	};
 	struct properties
 	{
@@ -82,17 +95,14 @@ namespace evrika
 	};
 	struct stock : reference
 	{
-		const xsfield*				getmeta() const { return stock_type; }
 	};
 	struct offer : reference
 	{
-		const xsfield*				getmeta() const { return stock_type; }
 	};
 	struct client : reference
 	{
 		const char*					full_name;
 		char						idcode[13];
-		const xsfield*				getmeta() const { return client_type; }
 	};
 	struct document_offers
 	{
@@ -115,6 +125,7 @@ namespace evrika
 		client*						client_to;
 		const char*					comment;
 		aref<document_offers>		offers;
-		const xsfield*				getmeta() const { return document_type; }
 	};
+	folder*							create_folder(folder* parent, const char* name, xsfield* metadata = 0);
+	reference*						create_predefined(folder* parent, const char* name);
 }

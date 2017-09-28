@@ -1,5 +1,8 @@
+#include "main.h"
+
 int main()
 {
+	command_app_initialize->execute();
 	return 0;
 }
 

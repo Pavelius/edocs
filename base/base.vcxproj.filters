@@ -93,6 +93,9 @@
     <ClCompile Include="command.cpp">
       <Filter>Support</Filter>
     </ClCompile>
+    <ClCompile Include="folder.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Support">
