@@ -1,4 +1,5 @@
 #include "aref.h"
+#include "command.h"
 #include "xsbase.h"
 
 #pragma once
@@ -17,26 +18,30 @@ BSRAW(c),\
 BSREQ(c, name, text_type),\
 BSREQ(c, comment, text_type)
 
+extern xsfield						client_type[];
+extern xsfield						char_type[];
 extern xsfield						document_type[];
+extern xsfield						profile_type[];
 extern xsfield						properties_type[];
 extern xsfield						reference_type[];
 extern xsfield						stock_type[];
-extern xsfield						client_type[];
-extern xsfield						char_type[];
 
 namespace evrika
 {
 	struct reference;
+	struct user;
 	namespace current
 	{
-		extern reference*			user;
+		extern struct user*			user;
+		extern struct user*			superuser;
 	}
 	struct rawobject
 	{
 		reference*					parent;
 		unsigned					uid;
 		unsigned					create, change;
-		reference					*creator, *changer;
+		user*						creator;
+		user*						changer;
 		unsigned					flags;
 		//
 		virtual bool				actualing() { return true; }
@@ -51,6 +56,19 @@ namespace evrika
 	{
 		const char*					name;
 		const char*					comment;
+	};
+	struct profile_rights
+	{
+		unsigned					show;
+		unsigned					change;
+	};
+	struct profile : reference
+	{
+		aref<profile_rights>		rights;
+	};
+	struct user : reference
+	{
+		struct profile*				profile;
 	};
 	struct requisit : rawobject
 	{

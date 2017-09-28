@@ -28,6 +28,9 @@
     <ClInclude Include="main.h">
       <Filter>Module</Filter>
     </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>Support</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="amem.cpp">
@@ -80,6 +83,15 @@
     </ClCompile>
     <ClCompile Include="offer.cpp">
       <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="profile.cpp">
+      <Filter>Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="command.cpp">
+      <Filter>Support</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

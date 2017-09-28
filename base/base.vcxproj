@@ -120,6 +120,7 @@
     <ClInclude Include="amem.h" />
     <ClInclude Include="aref.h" />
     <ClInclude Include="collection.h" />
+    <ClInclude Include="command.h" />
     <ClInclude Include="crt.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="xsbase.h" />
@@ -130,6 +131,7 @@
     <ClCompile Include="amem.cpp" />
     <ClCompile Include="client.cpp" />
     <ClCompile Include="collection.cpp" />
+    <ClCompile Include="command.cpp" />
     <ClCompile Include="crt.cpp" />
     <ClCompile Include="crt_memory.cpp" />
     <ClCompile Include="crt_parse.cpp" />
@@ -137,8 +139,10 @@
     <ClCompile Include="getstrdat.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="offer.cpp" />
+    <ClCompile Include="profile.cpp" />
     <ClCompile Include="properties.cpp" />
     <ClCompile Include="stock.cpp" />
+    <ClCompile Include="user.cpp" />
     <ClCompile Include="xsbase.cpp" />
     <ClCompile Include="xsfield.cpp" />
     <ClCompile Include="rawobject.cpp" />
